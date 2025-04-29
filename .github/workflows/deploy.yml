@@ -11,13 +11,16 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20  # Updated to Node.js 20 (LTS version)
           
+      - name: Install dependencies  # THIS CRUCIAL STEP WAS MISSING
+        run: npm ci
+      
       - name: Run unit tests
         run: npm test -- --passWithNoTests
           
@@ -37,8 +40,8 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
           
       - name: Deploy to S3
-        run: aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete  # Changed from build/ to dist/
+        run: aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
       
-      - name: Invalidate CloudFront cache (when CloudFront is set up)
+      - name: Invalidate CloudFront cache
         if: false  # Disabled for now - we'll enable this later
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
