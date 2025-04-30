@@ -64,6 +64,7 @@ export default function App() {
 
       <input
         type="text"
+        class="searchText"
         placeholder="Search for products..."
         value={searchTerm}
         onChange={handleSearchChange}
@@ -72,6 +73,7 @@ export default function App() {
 
       <select
         value={sortOrder}
+        class="sortSelect"
         onChange={handleSortChange}
         style={{ padding: "0.5rem" }}
       >
