@@ -29,10 +29,10 @@ export default function App() {
     setSortOrder(e.target.value);
   };
 
-  // let filteredProducts = productsData.filter((product) =>
-  //   product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  // );
-  let filteredProducts = productsData;
+  let filteredProducts = productsData.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  // let filteredProducts = productsData;
 
   if (sortOrder === "lowToHigh") {
     filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
