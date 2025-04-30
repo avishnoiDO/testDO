@@ -64,7 +64,7 @@ export default function App() {
 
       <input
         type="text"
-        class="searchText"
+        className="searchText"
         placeholder="Search for products..."
         value={searchTerm}
         onChange={handleSearchChange}
@@ -73,7 +73,7 @@ export default function App() {
 
       <select
         value={sortOrder}
-        class="sortSelect"
+        className="sortSelect"
         onChange={handleSortChange}
         style={{ padding: "0.5rem" }}
       >
@@ -121,7 +121,7 @@ export default function App() {
       </div>
 
       <div style={{ marginTop: "2rem" }}>
-        <button onClick={goToPreviousPage} disabled={currentPage === 1}>
+        <button onClick={goToPreviousPage} className="prev" disabled={currentPage === 1}>
           Previous
         </button>
 
@@ -129,7 +129,7 @@ export default function App() {
           Page {currentPage} of {totalPages}
         </span>
 
-        <button onClick={goToNextPage} disabled={currentPage === totalPages}>
+        <button onClick={goToNextPage} className="next" disabled={currentPage === totalPages}>
           Next
         </button>
       </div>
