@@ -5,11 +5,11 @@ const productsData = [
   { id: 2, name: "iPhone 15", price: 899, inStock: true },
   { id: 3, name: "iPhone 16 Mini", price: 699, inStock: false },
   { id: 4, name: "iPhone 14", price: 799, inStock: true },
+  { id: 9, name: "iPhone 13 Mini", price: 699, inStock: true },
   { id: 5, name: "iPhone 16 Standard", price: 999, inStock: true },
   { id: 6, name: "Samsung Galaxy S24", price: 1099, inStock: false },
   { id: 7, name: "iPhone 16 Pro", price: 1299, inStock: true },
   { id: 8, name: "OnePlus 12", price: 799, inStock: true },
-  { id: 9, name: "iPhone 13 Mini", price: 699, inStock: true },
   { id: 10, name: "iPhone 16 Plus", price: 1099, inStock: false },
 ];
 
@@ -62,14 +62,14 @@ export default function App() {
     <div style={{ padding: "2rem", fontFamily: "Arial" }}>
       <h1>Digital Ocean Product Search</h1>
 
-      <input
+      {/* <input
         type="text"
         className="searchText"
         placeholder="Search for products..."
         value={searchTerm}
         onChange={handleSearchChange}
         style={{ padding: "0.5rem", width: "300px", marginRight: "1rem" }}
-      />
+      /> */}
 
       {/* <select
         value={sortOrder}
