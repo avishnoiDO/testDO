@@ -60,7 +60,7 @@ export default function App() {
 
   return (
     <div style={{ padding: "2rem", fontFamily: "Arial" }}>
-      <h1>Dummy Product Search</h1>
+      <h1>Digital Ocean Product Search</h1>
 
       <input
         type="text"
@@ -71,7 +71,7 @@ export default function App() {
         style={{ padding: "0.5rem", width: "300px", marginRight: "1rem" }}
       />
 
-      <select
+      {/* <select
         value={sortOrder}
         className="sortSelect"
         onChange={handleSortChange}
@@ -80,7 +80,7 @@ export default function App() {
         <option value="">Sort by</option>
         <option value="lowToHigh">Price: Low to High</option>
         <option value="highToLow">Price: High to Low</option>
-      </select>
+      </select> */}
 
       <div style={{ marginTop: "2rem" }}>
         {displayedProducts.map((product) => (
@@ -120,7 +120,7 @@ export default function App() {
         ))}
       </div>
 
-      <div style={{ marginTop: "2rem" }}>
+      <div style={{ marginTop: "2rem" }} className="pagination">
         <button onClick={goToPreviousPage} className="prev" disabled={currentPage === 1}>
           Previous
         </button>
